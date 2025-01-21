@@ -1,7 +1,8 @@
 
 
 function Home(){
-  return <div className="text-lg text-red-400">Next js project started ... </div>
+  return <div className="text-lg ">فونت وزیر افروده شد  </div>
+  
 }
 
 export default Home

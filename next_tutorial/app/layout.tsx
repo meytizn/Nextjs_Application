@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import localFont from 'next/font/local'
+
+
+
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -12,10 +16,29 @@ import "./globals.css";
 //   subsets: ["latin"],
 // });
 
+
+
+
+
+
 export const metadata: Metadata = {
   title: "Next js 15",
   description: "Next js 15 Tutorial",
 };
+
+
+const VazirFont=localFont({
+  src:'../public/fonts/Vazirmatn-Regular.woff2'
+})
+
+
+
+
+
+
+
+
+
 
 
 export default function RootLayout({
@@ -27,10 +50,14 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={` bg-slate-900 text-slate-200     ${VazirFont}`}>
+
+    
+        <main className="p-5">
         {children}
+        </main>
+        
+
       </body>
     </html>
   );
