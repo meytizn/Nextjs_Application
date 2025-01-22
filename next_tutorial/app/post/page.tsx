@@ -11,7 +11,7 @@ interface PostInterface{
 
 async function Post(){
 
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts',{cache:'no-store',})
   let data:PostInterface[]=await response.json()
   data=data.slice(0,10) //to use 10 post
   return(
