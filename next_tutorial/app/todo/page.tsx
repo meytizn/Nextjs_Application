@@ -1,5 +1,15 @@
+interface TaskInterface{
+  id:number
+  title:string 
+  description:string
+}
+  
 
-function Todo(){
+async function Todo(){
+
+  const response = await fetch('http://localhost:8003/tasks/',{cache:'no-store'})
+  let data:TaskInterface[]= await response.json()
+
 
 
  return(<>
@@ -13,6 +23,15 @@ function Todo(){
   <button className="p-2 bg-slate-900 text-slate-100 rounded-md">add</button>
 </form>
 
+
+<div>
+{data.map((item)=>(
+  <div key={item.id}>
+  <p>{item.title}</p>
+  <p>{item.description}</p>
+  </div>
+))}
+</div>
  </>) 
 }
 
