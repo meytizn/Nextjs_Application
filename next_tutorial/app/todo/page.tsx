@@ -1,3 +1,5 @@
+import { revalidateTag } from "next/cache"
+
 interface TaskInterface{
   id:number
   title:string 
@@ -7,8 +9,14 @@ interface TaskInterface{
 
 async function Todo(){
 
-  const response = await fetch('http://localhost:8003/tasks/',{cache:'no-store'})
+  const response = await fetch('http://localhost:8003/tasks/',{
+    cache:'no-cache',
+    next:{tags :['tasks']}
+  })
+
   let data:TaskInterface[]= await response.json()
+
+
 
 async function add_do(e:FormData ){
   'use server'  //using server to send data for server
@@ -18,11 +26,10 @@ async function add_do(e:FormData ){
 
   await fetch('http://localhost:8003/tasks/',{
     method:'POST',
-    headers:{'Content-Type:application/json'},
+    headers:{'Content-Type':'application/json',},
     body:JSON.stringify(newdo)
-
   })
-
+  revalidateTag('tasks')
 }
 
  return(<>
