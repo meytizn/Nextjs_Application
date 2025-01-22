@@ -24,9 +24,9 @@ async function Todo(){
 </form>
 
 
-<div>
+<div className="flex flex-wrap justify-center max-w-xl mx-auto my-10 gap-5">
 {data.map((item)=>(
-  <div key={item.id}>
+  <div key={item.id} className="p-5 bg-slate-800 rounded-md text-center">
   <p>{item.title}</p>
   <p>{item.description}</p>
   </div>
