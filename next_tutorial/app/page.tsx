@@ -8,6 +8,8 @@ function Home(){
   <a href="/about">درباره ما </a>
   <br />
   <Link href="/post">تمامی پست ها </Link>
+  <br />
+  <Link href="/todo">تودو اپ</Link>
   </>
   )
 }
