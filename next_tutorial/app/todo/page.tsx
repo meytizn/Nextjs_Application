@@ -5,19 +5,19 @@ interface TaskInterface{
   title:string 
   description:string
 }
-  
 
+  // main function using fetch
 async function Todo(){
 
   const response = await fetch('http://localhost:8003/tasks/',{
     cache:'no-cache',
-    next:{tags :['tasks']}
+    next:{tags :['tasks']} //caching method reload datas when calling revalidateTag
   })
 
   let data:TaskInterface[]= await response.json()
 
 
-
+// server function using post method and called in action form 
 async function add_do(e:FormData ){
   'use server'  //using server to send data for server
   const title = e.get('title')
@@ -29,7 +29,7 @@ async function add_do(e:FormData ){
     headers:{'Content-Type':'application/json',},
     body:JSON.stringify(newdo)
   })
-  revalidateTag('tasks')
+  revalidateTag('tasks')   //import { revalidateTag } from "next/cache"
 }
 
  return(<>
