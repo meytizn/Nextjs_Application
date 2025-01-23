@@ -3,16 +3,22 @@ import React, { useState } from "react";
 
 function Navbar() {
   const [bottom, setbottom] = useState("-100px");
+
+  const [navlogo,SetNavlogo]=useState('images/bar.png')
+
   const [open, setOpen] = useState(false);
+
 
   const handleClick = () => {
     setOpen(!open);
     if (!open) {
       setbottom("0px");
-      console.log(open)
+      SetNavlogo('images/close.png')
+      //console.log(open)
     } else {
       setbottom("-100px");
-      console.log(open)
+      SetNavlogo('images/bar.png')
+      //console.log(open)
     }
   };
 
@@ -38,10 +44,10 @@ function Navbar() {
 
 <div
         // style={{ bottom: `${bottom}` }}
-        className="w-[20%] float-right text-center bg-blue-200 text-black my-[0px] transition-all delay-[5ms] fixed right-0 md:hidden "
+        className="w-[70px] float-right text-center text-black my-[0px] transition-all delay-[5ms] fixed right-0 md:hidden "
         onClick={handleClick}
       >
-        Tester
+        <img className="w-[80%]" src={`${navlogo}`}/>
       </div>
 
 
