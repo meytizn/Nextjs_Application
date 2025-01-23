@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 /* Reset margin and padding to 0 */
-* {
+/* * {
   box-sizing: border-box !important;
   padding: 0 !important;
   margin: 0 !important;
-}
+} */
+
+
+
+
+
+
+
+
 /* 
 :root {
   --background: #ffffff;
