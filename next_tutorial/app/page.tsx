@@ -1,15 +1,20 @@
 import Link from "next/link"
 
 
+
 function Home(){
   return( 
   <>
+  
+
+
   <div className="text-lg ">فونت وزیر افروده شد  </div>
   <a href="/about">درباره ما </a>
   <br />
   <Link href="/post">تمامی پست ها </Link>
   <br />
   <Link href="/todo">تودو اپ</Link>
+  
   </>
   )
 }

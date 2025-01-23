@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import localFont from 'next/font/local'
+import Navbar from "./myweb/navbar";
 
 
 
@@ -50,10 +51,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={` bg-slate-900 text-slate-200     ${VazirFont}`}>
+      <body className={` bg-slate-900 text-slate-200  ${VazirFont}`}>
 
     
         <main className="p-5">
+          <Navbar/>
         {children}
         </main>
         
