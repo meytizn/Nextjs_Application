@@ -2,6 +2,7 @@ import Link from "next/link"
 
 
 
+
 function Home(){
   return( 
   <>
@@ -15,6 +16,10 @@ function Home(){
   <br />
   <Link href="/todo">تودو اپ</Link>
   
+
+
+
+
   </>
   )
 }
