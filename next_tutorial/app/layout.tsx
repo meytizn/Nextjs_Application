@@ -51,7 +51,8 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`   ${VazirFont}`}>
+
+      <body  className={` bg-[#D7A044]  ${VazirFont}`}>
 
     
         <main className="p-5">

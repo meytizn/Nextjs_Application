@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Post from "./post/page"
 
 
 
@@ -8,7 +9,7 @@ function Home(){
   return( 
   <>
   
-
+<Post/>
 
   {/* <div className="text-lg ">فونت وزیر افروده شد  </div>
   <a href="/about">درباره ما </a>

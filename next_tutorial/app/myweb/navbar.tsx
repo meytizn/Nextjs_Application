@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 function Navbar() {
-  const [bottom, setbottom] = useState("-100px");
+  const [bottom, setbottom] = useState("-200px");
 
   const [navlogo,SetNavlogo]=useState('images/bar.png')
 
@@ -17,7 +17,7 @@ function Navbar() {
       SetNavlogo('images/close.png')
       //console.log(open)
     } else {
-      setbottom("-100px");
+      setbottom("-200px");
       SetNavlogo('images/bar.png')
       //console.log(open)
     }
@@ -29,11 +29,14 @@ function Navbar() {
 
 {/* navbar */}
 
-<div style={{ bottom: `${bottom}` }} className={`  flex flex-col fixed -z-10 right-0 left-0 bottom-0  text-black bg-blue-800 md:flex-row md:bg-pink-400 text-center  transition-all delay-[5ms] md:top-0 md:h-[50px] my-0`}>
-        <div id="firstdiv" className="w-[100%] md:w-[25%]"><Link href="/about">about us </Link></div>
-        <div className="w-[100%] md:w-[25%]">  <Link href="/post">تمامی پست ها </Link></div>
-        <div className="w-[100%] md:w-[25%]"><Link href="/todo">تودو اپ</Link></div>
-        <div className="w-[100%] md:w-[25%]">4</div>
+<div style={{ bottom: `${bottom}` }} className={`  flex flex-col fixed  right-0 left-0 bottom-0 z-5
+ text-black bg-blue-800 md:flex-row md:bg-pink-400 text-center  transition-all delay-[5ms] md:h-[50px] my-0  md:absolute   md:right-[10%]  md:left-[10%]  md:top-5 md:rounded-md`}>
+        
+        
+        <div id="firstdiv" className="w-[100%] md:w-[25%] h-[50px]"><Link href="/bio">about me </Link></div>
+        <div className="w-[100%] md:w-[25%] h-[50px]">  <Link href="/post">post using jsonplace holder api </Link></div>
+        <div className="w-[100%] md:w-[25%] h-[50px]"><Link href="/todo"> todo app using json-server on local</Link></div>
+        <div className="w-[100%] md:w-[25%] h-[50px]"><Link href="/movie">movies usuing my backend django</Link></div>
       </div>
 
 
